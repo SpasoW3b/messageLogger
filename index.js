@@ -36,13 +36,13 @@ clientUser.on("messageDelete", async (messageDelete) => {
      if(messageDelete.channel.type === "dm"){
          messageDelete.attachments.forEach(attachment => {
              const ImageLink = attachment.proxyURL;
-             const exampleEmbed = new Discord.RichEmbed()
+             const embedDM = new Discord.RichEmbed()
                  .setColor('#3541F1')
                  .setTitle(`📸 PrivateDM ${messageDelete.author.username} (${messageDelete.author.id})`)
                  .setImage(`${ImageLink}`)
                  .setTimestamp()
                  .setFooter('Dev by Spaso.')
-             imgLogger.send(exampleEmbed)
+             imgLogger.send(embedDM)
              imgLogger.send(`<@${clientUser.user.id}>`)
 
          });
